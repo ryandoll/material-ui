@@ -2,10 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { chainPropTypes } from '@mui/utils';
-import { generateUtilityClasses } from '@mui/base';
 import SliderUnstyled, {
   SliderValueLabelUnstyled,
-  sliderUnstyledClasses,
   getSliderUtilityClass,
 } from '@mui/base/SliderUnstyled';
 import { alpha, lighten, darken } from '@mui/system';
@@ -14,18 +12,7 @@ import styled, { slotShouldForwardProp } from '../styles/styled';
 import useTheme from '../styles/useTheme';
 import shouldSpreadAdditionalProps from '../utils/shouldSpreadAdditionalProps';
 import capitalize from '../utils/capitalize';
-
-export const sliderClasses = {
-  ...sliderUnstyledClasses,
-  ...generateUtilityClasses('MuiSlider', [
-    'colorPrimary',
-    'colorSecondary',
-    'thumbColorPrimary',
-    'thumbColorSecondary',
-    'sizeSmall',
-    'thumbSizeSmall',
-  ]),
-};
+import sliderClasses from './sliderClasses';
 
 const SliderRoot = styled('span', {
   name: 'MuiSlider',

@@ -32,12 +32,6 @@ export type ModalTypeMap<D extends React.ElementType = 'div', P = {}> = ExtendMo
   defaultComponent: D;
 }>;
 
-type ModalRootProps = NonNullable<ModalTypeMap['props']['componentsProps']>['root'];
-
-export const ModalRoot: React.FC<ModalRootProps>;
-
-export type ModalClassKey = keyof NonNullable<ModalTypeMap['props']['classes']>;
-
 /**
  * Modal is a lower-level construct that is leveraged by the following components:
  *
@@ -60,10 +54,6 @@ export type ModalClassKey = keyof NonNullable<ModalTypeMap['props']['classes']>;
  * - [Modal API](https://mui.com/material-ui/api/modal/)
  */
 declare const Modal: ExtendModalUnstyled<ModalTypeMap>;
-
-export type ModalClasses = Record<ModalClassKey, string>;
-
-export const modalClasses: ModalClasses;
 
 export type ModalProps<
   D extends React.ElementType = ModalTypeMap['defaultComponent'],

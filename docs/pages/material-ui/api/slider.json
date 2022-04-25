@@ -87,6 +87,12 @@
   "name": "Slider",
   "styles": {
     "classes": [
+      "colorPrimary",
+      "colorSecondary",
+      "sizeSmall",
+      "thumbColorPrimary",
+      "thumbColorSecondary",
+      "thumbSizeSmall",
       "root",
       "marked",
       "vertical",
@@ -106,13 +112,7 @@
       "mark",
       "markActive",
       "markLabel",
-      "markLabelActive",
-      "colorPrimary",
-      "colorSecondary",
-      "sizeSmall",
-      "thumbColorPrimary",
-      "thumbColorSecondary",
-      "thumbSizeSmall"
+      "markLabelActive"
     ],
     "globalClasses": {
       "disabled": "Mui-disabled",

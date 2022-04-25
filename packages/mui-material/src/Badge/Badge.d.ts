@@ -97,12 +97,6 @@ export type BadgeTypeMap<
   defaultComponent: D;
 }>;
 
-type BadgeRootProps = NonNullable<BadgeTypeMap['props']['componentsProps']>['root'];
-type BadgeBadgeProps = NonNullable<BadgeTypeMap['props']['componentsProps']>['badge'];
-
-export const BadgeRoot: React.FC<BadgeRootProps>;
-export const BadgeMark: React.FC<BadgeBadgeProps>;
-
 /**
  *
  * Demos:

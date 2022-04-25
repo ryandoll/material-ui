@@ -1,13 +1,10 @@
 import * as React from 'react';
-import {
-  ExtendSliderUnstyledTypeMap,
-  ExtendSliderUnstyled,
-  SliderUnstyledTypeMap,
-} from '@mui/base/SliderUnstyled';
+import { ExtendSliderUnstyledTypeMap, ExtendSliderUnstyled } from '@mui/base/SliderUnstyled';
 import { SxProps } from '@mui/system';
 import { OverridableStringUnion } from '@mui/types';
 import { Theme } from '../styles';
 import { OverrideProps } from '../OverridableComponent';
+import { SliderClasses } from './sliderClasses';
 
 export interface SliderPropsColorOverrides {}
 
@@ -28,20 +25,7 @@ export type SliderTypeMap<
     /**
      * Override or extend the styles applied to the component.
      */
-    classes?: SliderUnstyledTypeMap['props']['classes'] & {
-      /** Class name applied to the root element if `color="primary"`. */
-      colorPrimary?: string;
-      /** Class name applied to the root element if `color="secondary"`. */
-      colorSecondary?: string;
-      /** Class name applied to the root element if `size="small"`. */
-      sizeSmall?: string;
-      /** Class name applied to the thumb element if `color="primary"`. */
-      thumbColorPrimary?: string;
-      /** Class name applied to the thumb element if `color="secondary"`. */
-      thumbColorSecondary?: string;
-      /** Class name applied to the thumb element if `size="small"`. */
-      thumbSizeSmall?: string;
-    };
+    classes?: Partial<SliderClasses>;
     /**
      * The size of the slider.
      * @default 'medium'
@@ -64,14 +48,25 @@ type SliderThumbProps = NonNullable<SliderTypeMap['props']['componentsProps']>['
 type SliderValueLabelProps = NonNullable<SliderTypeMap['props']['componentsProps']>['valueLabel'];
 type SliderInputProps = NonNullable<SliderTypeMap['props']['componentsProps']>['input'];
 
-export const SliderRoot: React.FC<SliderRootProps>;
-export const SliderMark: React.FC<SliderMarkProps>;
-export const SliderMarkLabel: React.FC<SliderMarkLabelProps>;
-export const SliderRail: React.FC<SliderRailProps>;
-export const SliderTrack: React.FC<SliderTrackProps>;
-export const SliderThumb: React.FC<SliderThumbProps>;
-export const SliderValueLabel: React.FC<SliderValueLabelProps>;
-export const SliderInput: React.FC<SliderInputProps>;
+declare const SliderRoot: React.FC<SliderRootProps>;
+declare const SliderMark: React.FC<SliderMarkProps>;
+declare const SliderMarkLabel: React.FC<SliderMarkLabelProps>;
+declare const SliderRail: React.FC<SliderRailProps>;
+declare const SliderTrack: React.FC<SliderTrackProps>;
+declare const SliderThumb: React.FC<SliderThumbProps>;
+declare const SliderValueLabel: React.FC<SliderValueLabelProps>;
+declare const SliderInput: React.FC<SliderInputProps>;
+
+export {
+  SliderRoot,
+  SliderMark,
+  SliderMarkLabel,
+  SliderRail,
+  SliderTrack,
+  SliderThumb,
+  SliderValueLabel,
+  SliderInput,
+};
 
 /**
  *
@@ -86,15 +81,9 @@ export const SliderInput: React.FC<SliderInputProps>;
  */
 declare const Slider: ExtendSliderUnstyled<SliderTypeMap>;
 
-export type SliderClassKey = keyof NonNullable<SliderTypeMap['props']['classes']>;
-
 export type SliderProps<
   D extends React.ElementType = SliderTypeMap['defaultComponent'],
   P = {},
 > = OverrideProps<SliderTypeMap<D, P>, D>;
-
-export type SliderClasses = Record<SliderClassKey, string>;
-
-export const sliderClasses: SliderClasses;
 
 export default Slider;
