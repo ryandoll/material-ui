@@ -86,7 +86,7 @@ npm install @mui/material @mui/styles
 yarn add @mui/material @mui/styles
 ```
 
-**Optional**: if you have one these packages, install the new package separately
+**Optional**: if you have one of these packages, install the new package separately
 
 - For `@material-ui/lab`, install `@mui/lab`
 - For `@material-ui/icons`, install `@mui/icons-material`
